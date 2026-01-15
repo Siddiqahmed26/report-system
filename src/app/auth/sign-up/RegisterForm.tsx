@@ -23,8 +23,8 @@ const RegisterForm = () => {
     setLoading(true);
 
     try {
-      if (!email.endsWith('@saividya.ac.in')) {
-        toast.error('The email entered is not part of the organization');
+      if (!email.endsWith('@university.ac.in')) {
+        toast.error('The email entered is not part of the organization || HINT : email@university.ac.in');
         return;
       }
       const response = await fetch('/api/auth/register', {

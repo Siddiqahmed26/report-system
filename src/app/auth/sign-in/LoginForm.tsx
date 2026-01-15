@@ -29,7 +29,7 @@ const LoginForm = () => {
       });
       if (!result?.ok) {
         toast.error(
-          'It seems that there may be an issue with either the email or password you entered.'
+          'It seems that there may be an issue with either the email or password you entered. Or Enter email@university.ac.in'
         );
       } else {
         router.push('/dashboard');

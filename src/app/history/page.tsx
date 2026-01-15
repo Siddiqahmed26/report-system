@@ -8,7 +8,7 @@ export default async function page() {
   const session = await getServerSession();
   const user = session?.user;
 
-  if (user?.email === 'admin@saividya.ac.in') {
+  if (user?.email === 'admin@university.ac.in') {
     return (
       <DashboardLayout>
         <div className='flex flex-col items-center justify-center h-[80vh] gap-6'>

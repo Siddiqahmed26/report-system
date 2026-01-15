@@ -7,7 +7,7 @@ const page = async () => {
   const session = await getServerSession();
   const user = session?.user;
 
-  if (user?.email === 'admin@saividya.ac.in') {
+  if (user?.email === 'admin@university.ac.in') {
     return <AdminDashboard />;
   }
 
