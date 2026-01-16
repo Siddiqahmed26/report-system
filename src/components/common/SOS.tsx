@@ -74,7 +74,7 @@ const SOS = () => {
         const response = await sos([latitude, longitude]);
         if (response) {
           toast.success('SOS TRIGGERED');
-          window.location.reload(); // 🔥 force map to refetch data
+          // window.location.reload(); // 🔥 force map to refetch data
         }
       },
       (err) => {
