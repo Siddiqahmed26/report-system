@@ -39,7 +39,10 @@ export default async function page() {
                     {item.category}
                   </td>
                   <td className='px-6 py-4 whitespace-nowrap'>
-                    {item.coordinates}
+                  {item.latitude && item.longitude
+  ? `${item.latitude}, ${item.longitude}`
+  : 'N/A'}
+
                   </td>
                   <td className='px-6 py-4 whitespace-nowrap'>
                     {item.status === 'pending' ? (
