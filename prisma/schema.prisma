@@ -27,7 +27,8 @@ model reports {
   username String
   description String
   category String
-  coordinates Float[]
+  latitude    Float?
+  longitude   Float?
   status String
 }
 
