@@ -204,10 +204,22 @@ const MapView = () => {
         setPoints([]);
       }
     };
-
+  
+    // Initial load
     fetchCoordinates();
+  
+    // 🔥 Listen for SOS trigger
+    const handler = () => {
+      fetchCoordinates();
+    };
+  
+    window.addEventListener('sos-triggered', handler);
+  
+    return () => {
+      window.removeEventListener('sos-triggered', handler);
+    };
   }, []);
-
+  
   return (
     <MapContainer
       center={center}
@@ -231,7 +243,10 @@ const MapView = () => {
         return (
           <Marker
             key={index}
-            position={item.coordinates}
+            position={[
+              item.coordinates[0] + Math.random() * 0.00005,
+              item.coordinates[1] + Math.random() * 0.00005,
+            ]}
             icon={customIcon}
           >
             <Popup>

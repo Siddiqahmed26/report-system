@@ -29,7 +29,7 @@
 // }
 
 import prisma from '@/lib/prisma';
-// import { revalidatePath } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {
@@ -42,10 +42,9 @@ export async function GET(req: NextRequest) {
         longitude: true,
       },
       where: {
-        OR: [
-          { status: 'cleared' },
-          { category: 'SOS' },
-        ],
+       
+          category: 'SOS' 
+        
       },
     });
 
@@ -61,7 +60,7 @@ export async function GET(req: NextRequest) {
         coordinates: [item.latitude, item.longitude],
       }));
 
-    // revalidatePath('/dashboard');
+    revalidatePath('/dashboard');
     return NextResponse.json({ data: formatted }, { status: 200 });
   } catch (error) {
     console.log('Error at Coordinates route ' + error);

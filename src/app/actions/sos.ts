@@ -46,7 +46,7 @@ export async function sos(coordinates: any) {
       username: user?.name || '',
       description: '',
       category: 'SOS',
-      status: 'cleared',
+      status: 'pending',
     };
 
     // ✅ SAFETY CHECK: only add lat/lng if valid
